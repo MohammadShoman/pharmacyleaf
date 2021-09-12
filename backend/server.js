@@ -7,7 +7,7 @@ const db=require("./db/db")
 
 const loginModel=require('./routers/routes/login')
 const usersModel=require('./routers/routes/registration')
-
+const productModel=require('./routers/routes/products')
 
 //routers
 
@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use(loginModel)
 app.use(usersModel)
+app.use(productModel)
 
 
 

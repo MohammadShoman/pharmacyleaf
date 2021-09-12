@@ -1,0 +1,24 @@
+.All-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin:40px auto;
+}
+.product{
+    width: 25%;
+    height: 250px;
+    background-color:blanchedalmond;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+
+}
+.image{
+    height: 100px;
+    width: 100%;
+}
+
+
