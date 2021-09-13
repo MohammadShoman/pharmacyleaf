@@ -17,13 +17,13 @@ const Home = () => {
     <>
       <div className="All-products">
         {result.map((elem, i) => {
-            console.log(elem.image);
+          console.log(elem.image);
           return (
             <div className="product">
-              <img src={elem.image}  />
+              <img src={elem.image} />
               <p>{elem.productName}</p>
               <p>{elem.description}</p>
-              <p>{elem.price}</p>
+              <p>{elem.price + " $"}</p>
             </div>
           );
         })}

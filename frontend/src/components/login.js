@@ -1,23 +1,24 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import logo from "./../../src/large_pharmacyleaf.png";
 
 import "./login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const history = useHistory();
   const checkLogin = () => {
     axios
       .post(`http://localhost:5000/login`, { email: email, password: password })
       .then((result) => {
+        if (result.data.token) {
+          history.push("/");
+          window.location.reload(false);
+        }
         localStorage.setItem("token", result.data.token);
-        
       })
-      .catch((error) => {
-       
-      });
+      .catch((error) => {});
   };
 
   return (
